@@ -1,0 +1,23 @@
+body{
+    background-color:rgb(208, 219, 245);
+    margin:0;
+    font-family:'Roboto', sans-serif;
+}
+
+.button{
+    height:50px;
+    border:0;
+    background-color:yellow;
+    font-size:18px;
+    border-radius:5px;
+    margin-top:300px;
+}
+
+#rock{
+    margin-left:600px;
+    margin-right:10px;
+}
+
+#paper{
+    margin-right:10px;
+}

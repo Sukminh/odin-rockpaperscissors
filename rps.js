@@ -1,7 +1,9 @@
 let winner = "";
+let playScore = 0;
+let compScore = 0;
 
 function getComputerChoice() {
-    const compSel = Math.floor(Math.random() * 3);
+    let compSel = Math.floor(Math.random() * 3);
     if(compSel == 0) {
         return "Rock";
     }
@@ -58,29 +60,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let playScore = 0;
-    let compScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let sign = prompt("What's your choice? (rock, paper, or scissors)");
-        console.log(playRound(sign, getComputerChoice()));
-        if(winner == "Player") {
-            playScore++;
-        }
-        else if(winner == "Comp") {
-            compScore++;
-        }
-        console.log("Score |  Player: " + playScore + " Computer: " + compScore);
+function game(sign) {
+    console.log(playRound(sign, getComputerChoice()));
+    if(winner == "Player") {
+        playScore++;
     }
-    if(playScore > compScore) {
+    else if(winner == "Comp") {
+        compScore++;
+    }
+    console.log("Score |  Player: " + playScore + " Computer: " + compScore);
+    if(playScore == 5) {
         console.log("You won Rock, Paper, Scissors against Computer!");
     }
-    else if(playScore < compScore) {
+    else if(compScore == 5) {
         console.log("You lose Rock, Paper, Scissors against Computer!");
-    }
-    else {
-        console.log("You tie Rock, Paper, Scissors against Computer!");
     }
 }
 
-game();
